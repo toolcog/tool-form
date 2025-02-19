@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "packages",
+  "entryPoints": [
+    "packages/tool-form",
+    "packages/args",
+    "packages/markdown",
+    "packages/multipart"
+  ],
+  "excludeInternal": true,
+  "excludePrivate": true,
+  "hideGenerator": true,
+  "readme": "none"
+}

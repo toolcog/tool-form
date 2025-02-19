@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "@tool-form/examples",
+  "scripts": {
+    "clean": "rimraf .turbo",
+    "clean-all": "rimraf .turbo node_modules"
+  },
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "catalog:dev",
+    "@tool-form/markdown": "workspace:*",
+    "@tool-form/multipart": "workspace:*",
+    "openai": "catalog:dev",
+    "tool-json": "catalog:dep",
+    "tool-form": "workspace:*",
+    "tool-schema": "catalog:dep",
+    "tool-uri": "catalog:dep"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-plugin-jsdoc": "catalog:dev",
+    "prettier": "catalog:dev",
+    "rimraf": "catalog:dev",
+    "typedoc": "catalog:dev",
+    "typescript": "catalog:dev",
+    "typescript-eslint": "catalog:dev"
+  }
+}
