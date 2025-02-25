@@ -8,6 +8,7 @@
   "type": "module",
   "dependencies": {
     "@anthropic-ai/sdk": "catalog:dev",
+    "@tool-form/args": "workspace:*",
     "@tool-form/markdown": "workspace:*",
     "@tool-form/multipart": "workspace:*",
     "openai": "catalog:dev",
