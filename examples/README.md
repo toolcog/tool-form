@@ -33,13 +33,13 @@ OPENAI_API_KEY=your_key ANTHROPIC_API_KEY=your_key node --experimental-strip-typ
 
 **The Challenge:** Creating consistent, reproducible agent behavior presents significant challenges, especially as decision complexity increases.
 
-This example demonstrates how Tool Form enables explicit structure in the agent's decision-making process itself - not just in the execution of decisions. It shows:
+This example demonstrates how Tool Form facilitates explicit structure in the agent's decision-making process itself - not just in the execution of decisions. Using a content moderation scenario, it shows:
 
-- How to transform fuzzy reasoning into discrete, structured decision spaces
+- How to transform fuzzy reasoning into discrete, structured decision spaces with evidence-based assessments
 - Techniques for explicit reasoning pathways that enhance logical consistency
-- Patterns for improving reproducibility in agent behavior across runs
+- Patterns for improving reproducibility in agent behavior across runs, even with borderline cases
 
-**Key Insight:** By structuring the decision space itself, not just the actions, we can create agents with more predictable behavior that degrades gracefully under uncertainty.
+**Key Insight:** By structuring the decision space itself, not just the actions, we can create agents with more predictable behavior that degrades gracefully under uncertainty while maintaining clear lines of reasoning from evidence to conclusions.
 
 ### 2. Explicit Uncertainty Handling (`explicit-uncertainty.ts`)
 
