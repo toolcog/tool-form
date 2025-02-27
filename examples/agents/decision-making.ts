@@ -22,9 +22,7 @@
 // This pattern is foundational for reliable agency and forms the basis for
 // more sophisticated agent architectures in subsequent examples.
 
-
-import type { Payload } from "tool-json";
-import { Template } from "tool-form";
+import { parseTemplate } from "tool-form";
 import { markdownEncoding } from "@tool-form/markdown";
 import { Anthropic } from "@anthropic-ai/sdk";
 
@@ -246,7 +244,7 @@ const evaluateGuidelineTool = {
  * determining a judgment, and assessing confidence. This cognitive scaffolding
  * creates consistency across evaluations.
  */
-const evaluateGuidelineTemplate = Template.parse(
+const evaluateGuidelineTemplate = await parseTemplate(
   {
     $encode: "markdown",
     $block: [
@@ -372,10 +370,10 @@ async function evaluateGuideline(
 
   // Transform semantic objects into a cognitively structured prompt
   // This is where Tool Form creates the decision structure that guides the LLM
-  const prompt = evaluateGuidelineTemplate.transform({
+  const prompt = (await evaluateGuidelineTemplate.transform({
     content,
     guideline,
-  }) as Payload<string>;
+  })) as string;
 
   // Print the transformed prompt for the first evaluation
   // to demonstrate the transformation
@@ -383,7 +381,7 @@ async function evaluateGuideline(
     console.log("\n" + "-".repeat(40));
     console.log("TOOL FORM TRANSFORMATION EXAMPLE");
     console.log("-".repeat(40));
-    console.log(prompt.value);
+    console.log(prompt);
     console.log("-".repeat(40) + "\n");
   }
 
@@ -391,7 +389,7 @@ async function evaluateGuideline(
     model: MODEL,
     max_tokens: 4000,
     system: SYSTEM_PROMPT,
-    messages: [{ role: "user", content: prompt.value }],
+    messages: [{ role: "user", content: prompt }],
     tools: [evaluateGuidelineTool],
     tool_choice: { type: "tool", name: "evaluate_guideline" },
   });
@@ -445,7 +443,7 @@ const synthesizeDecisionTool = {
  * evaluation. This creates a conservative moderation approach that's
  * appropriate for content safety.
  */
-const synthesizeDecisionTemplate = Template.parse(
+const synthesizeDecisionTemplate = await parseTemplate(
   {
     $encode: "markdown",
     $block: [
@@ -613,18 +611,18 @@ async function synthesizeDecision(
 
   // Transform semantic evaluation objects into a structured synthesis prompt
   // Note how Tool Form handles the complex template logic for displaying factors
-  const prompt = synthesizeDecisionTemplate.transform({
+  const prompt = (await synthesizeDecisionTemplate.transform({
     content,
     evaluations,
     guidelines: communityGuidelines,
-  }) as Payload<string>;
+  })) as string;
 
   // Print the transformed prompt to demonstrate the synthesis process
   if (content.id === "C1") {
     console.log("\n" + "-".repeat(40));
     console.log("TOOL FORM TRANSFORMATION: SYNTHESIS");
     console.log("-".repeat(40));
-    console.log(prompt.value);
+    console.log(prompt);
     console.log("-".repeat(40) + "\n");
   }
 
@@ -632,7 +630,7 @@ async function synthesizeDecision(
     model: MODEL,
     max_tokens: 4000,
     system: SYSTEM_PROMPT,
-    messages: [{ role: "user", content: prompt.value }],
+    messages: [{ role: "user", content: prompt }],
     tools: [synthesizeDecisionTool],
     tool_choice: {
       type: "tool",
@@ -857,7 +855,9 @@ async function main() {
   console.log(
     "2. Breaking decisions into components enables principled reasoning",
   );
-  console.log("3. Tool Form facilitates this through transformation and structure");
+  console.log(
+    "3. Tool Form facilitates this through transformation and structure",
+  );
   console.log("=".repeat(60));
 }
 

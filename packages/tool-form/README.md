@@ -157,6 +157,16 @@ And here's the best part - you don't have to write these templates by hand. Tool
 
 Ready to dive deeper? Check out the documentation below.
 
+## Examples
+
+Tool Form includes two collections of examples that demonstrate its capabilities through practical implementations:
+
+- [**Tool Examples**](../../examples/tools#readme) - Progressive examples showing how to connect AI to APIs through semantic templates, from basic protocol projection to scalable Tool Augmented Generation (TAG).
+
+- [**Agent Examples**](../../examples/agents#readme) - Architectural patterns for building reliable, scalable agent systems that demonstrate how structured interfaces enhance AI agent capabilities.
+
+Each collection shows how to solve specific problems you'll encounter when connecting AI to APIs in reliable agent systems.
+
 ## Crash Course
 
 Let's dive into Tool Form by understanding how it transforms data. This crash course moves quickly but thoroughly—each section builds on the previous ones, so follow along in sequence.

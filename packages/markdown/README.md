@@ -1750,9 +1750,9 @@ The markdown encoding maintains two distinct processing contexts:
 
 ## Learn More
 
-- [Tool Form Documentation](https://github.com/toolcog/tool-form)
-- [Response Engineering Guide](https://github.com/toolcog/tool-form/docs/response-engineering.md)
-- [Tool Form RFC](https://github.com/toolcog/tool-form/docs/tool-form-rfc.md)
+- [Markdown Encoding RFC](../../specs/markdown-encoding.md)
+- [Tool Form RFC](../../specs/tool-form.md)
+- [Tool Form Documentation](../../README.md)
 
 ## License
 

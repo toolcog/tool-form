@@ -33,9 +33,21 @@ Making this projection work in practice requires solving three core challenges:
 
 3. **Unified Transformation** - Real payloads are deeply layered (base64-encoded JSON inside multipart form data, JWT claims inside OAuth headers, escaped XML inside CDATA sections). Tool Form models the entire pipeline of transformations and encodings as a single unit, ensuring that structure and safety flow end-to-end.
 
+## Examples
+
+Tool Form includes two collections of examples that demonstrate its practical applications:
+
+- [**AI Tool Examples**](examples/tools#readme) - A progressive series showing how to connect AI to APIs through semantic transformations. These examples address key challenges in connecting AI to APIs, from basic protocol projection to scalable Tool Augmented Generation (TAG) and AI-driven optimization.
+
+- [**AI Agent Examples**](examples/agents#readme) - Architectural patterns for building robust AI agents. These examples demonstrate how semantically enriching structured data improves agentic planning, decision-making, and task execution.
+
+Together, these examples demonstrate how Tool Form enables general purpose AI agents that can dynamically select and reliably use any API within the confines of a rigorous security model.
+
 ## Documentation
 
-- [Tool Form RFC](docs/tool-form-rfc.md) - Tool Form specification
+- [Tool Form RFC](specs/tool-form.md) - Tool Form specification
+- [Markdown Encoding RFC](specs/markdown-encoding.md) - Markdown encoding specification
+- [Multipart Encoding RFC](specs/multipart-encoding.md) - Multipart encoding specification
 
 ## Packages
 
